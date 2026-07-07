@@ -394,7 +394,7 @@ class MinesweeperPlusGame(Game):
                 GameObjectiveTemplate(
                     label = "Complete LEVEL stages in The Long Haul on any difficulty.",
                         data = {
-                            "LEVEL": (self.levels, 1)
+                            "LEVEL": (self.level, 1)
                         },
                         is_time_consuming = False,
                         is_difficult = False,
@@ -403,7 +403,7 @@ class MinesweeperPlusGame(Game):
                 GameObjectiveTemplate(
                     label = "Complete LEVEL stages in The Long Haul on DIFFICULTY difficulty or higher.",
                         data = {
-                            "LEVEL": (self.levels, 1),
+                            "LEVEL": (self.level, 1),
                             "DIFFICULTY": (self.difficulty, 1)
                         },
                         is_time_consuming = False,
@@ -633,7 +633,7 @@ class MinesweeperPlusGame(Game):
             "The Devil's Passage (Episode 2 Stage 10)",
         ]
     @staticmethod
-    def episode_2_levels() -> List[str]:
+    def episode_3_levels() -> List[str]:
         return [
             "Bubbly Tub (Episode 3 Stage 1)",
             "Steamy Jacuzzi (Episode 3 Stage 2)",
