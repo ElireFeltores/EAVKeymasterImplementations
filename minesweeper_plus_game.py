@@ -216,6 +216,104 @@ class MinesweeperPlusGame(Game):
                         weight = 1,
                 ),
             ])
+        if self.include_episode_2:
+            game_objective_templates.extend([
+                GameObjectiveTemplate(
+                    label = "Beat EPISODE3_LEVEL on any difficulty.",
+                        data = {
+                            "EPISODE3_LEVEL": (self.episode_3_levels, 1),
+                            "DIFFICULTY": (self.difficulty, 1)
+                        },
+                        is_time_consuming = False,
+                        is_difficult = False,
+                        weight = 10,
+                ),
+                GameObjectiveTemplate(
+                    label = "Beat EPISODE3_LEVEL on DIFFICULTY or higher.",
+                        data = {
+                            "EPISODE3_LEVEL": (self.episode_3_levels, 1),
+                            "DIFFICULTY": (self.difficulty, 1)
+                        },
+                        is_time_consuming = False,
+                        is_difficult = True,
+                        weight = 10,
+                ),
+                GameObjectiveTemplate(
+                    label = "Beat the following levels on any difficulty: EPISODE3_LEVEL",
+                        data = {
+                            "EPISODE3_LEVEL": (self.episode_3_levels, 2)
+                        },
+                        is_time_consuming = True,
+                        is_difficult = False,
+                        weight = 4,
+                ),
+                GameObjectiveTemplate(
+                    label = "Beat the following levels on any difficulty: EPISODE3_LEVEL",
+                        data = {
+                            "EPISODE3_LEVEL": (self.episode_3_levels, 3)
+                        },
+                        is_time_consuming = True,
+                        is_difficult = False,
+                        weight = 3,
+                ),
+                GameObjectiveTemplate(
+                    label = "Beat the following levels on any difficulty: EPISODE3_LEVEL",
+                        data = {
+                            "EPISODE3_LEVEL": (self.episode_3_levels, 4)
+                        },
+                        is_time_consuming = True,
+                        is_difficult = False,
+                        weight = 2,
+                ),
+                GameObjectiveTemplate(
+                    label = "Beat the following levels on DIFFICULTY or higher: EPISODE3_LEVEL",
+                        data = {
+                            "EPISODE3_LEVEL": (self.episode_3_levels, 2),
+                            "DIFFICULTY": (self.difficulty, 1)
+                        },
+                        is_time_consuming = True,
+                        is_difficult = True,
+                        weight = 4,
+                ),
+                GameObjectiveTemplate(
+                    label = "Beat the following levels on DIFFICULTY or higher: EPISODE3_LEVEL",
+                        data = {
+                            "EPISODE3_LEVEL": (self.episode_3_levels, 3),
+                            "DIFFICULTY": (self.difficulty, 1)
+                        },
+                        is_time_consuming = True,
+                        is_difficult = True,
+                        weight = 3,
+                ),
+                GameObjectiveTemplate(
+                    label = "Beat the following levels on DIFFICULTY or higher: EPISODE3_LEVEL",
+                        data = {
+                            "EPISODE3_LEVEL": (self.episode_3_levels, 4),
+                            "DIFFICULTY": (self.difficulty, 1)
+                        },
+                        is_time_consuming = True,
+                        is_difficult = True,
+                        weight = 2,
+                ),
+                GameObjectiveTemplate(
+                    label = "Complete Episode 3 on any difficulty.",
+                        data = {
+                        
+                        },
+                        is_time_consuming = True,
+                        is_difficult = True,
+                        weight = 1,
+                ),
+                GameObjectiveTemplate(
+                    label = "Complete Episode 3 on DIFFICULTY or higher.",
+                        data = {
+                        "DIFFICULTY": (self.difficulty, 1)
+                        },
+                        is_time_consuming = True,
+                        is_difficult = True,
+                        weight = 1,
+                ),
+            ])
         if self.include_big_one:
             game_objective_templates.extend([
                 GameObjectiveTemplate(
@@ -291,6 +389,28 @@ class MinesweeperPlusGame(Game):
                         weight = 1,
                 ),
             ])
+        if self.include_long_haul:
+            game_objective_templates.extend([
+                GameObjectiveTemplate(
+                    label = "Complete LEVEL stages in The Long Haul on any difficulty.",
+                        data = {
+                            "LEVEL": (self.levels, 1)
+                        },
+                        is_time_consuming = False,
+                        is_difficult = False,
+                        weight = 7,
+                ),
+                GameObjectiveTemplate(
+                    label = "Complete LEVEL stages in The Long Haul on DIFFICULTY difficulty or higher.",
+                        data = {
+                            "LEVEL": (self.levels, 1),
+                            "DIFFICULTY": (self.difficulty, 1)
+                        },
+                        is_time_consuming = False,
+                        is_difficult = True,
+                        weight = 5,
+                ),
+            ])
         if self.include_free_play:
             game_objective_templates.extend([
                 GameObjectiveTemplate(
@@ -313,7 +433,7 @@ class MinesweeperPlusGame(Game):
                         },
                         is_time_consuming = False,
                         is_difficult = True,
-                        weight = 5,
+                        weight = 3,
                 ),
                 GameObjectiveTemplate(
                     label = "Beat a WIDTH by HEIGHT board that is MINES mines with the 10 boss.",
@@ -324,7 +444,18 @@ class MinesweeperPlusGame(Game):
                         },
                         is_time_consuming = False,
                         is_difficult = True,
-                        weight = 5,
+                        weight = 3,
+                ),
+                GameObjectiveTemplate(
+                    label = "Beat a WIDTH by HEIGHT board that is MINES mines with the 11 boss.",
+                        data = {
+                            "WIDTH": (self.width, 1),
+                            "HEIGHT": (self.height, 1),
+                            "MINES": (self.mines, 1)
+                        },
+                        is_time_consuming = False,
+                        is_difficult = True,
+                        weight = 3,
                 ),
                 GameObjectiveTemplate(
                     label = "Beat a WIDTH by HEIGHT board that is MINES mines with the 9 and 10 bosses.",
@@ -337,6 +468,39 @@ class MinesweeperPlusGame(Game):
                         is_difficult = True,
                         weight = 2,
                 ),
+                GameObjectiveTemplate(
+                    label = "Beat a WIDTH by HEIGHT board that is MINES mines with the 9 and 11 bosses.",
+                        data = {
+                            "WIDTH": (self.width, 1),
+                            "HEIGHT": (self.height, 1),
+                            "MINES": (self.mines, 1)
+                        },
+                        is_time_consuming = False,
+                        is_difficult = True,
+                        weight = 2,
+                ),
+                GameObjectiveTemplate(
+                    label = "Beat a WIDTH by HEIGHT board that is MINES mines with the 10 and 11 bosses.",
+                        data = {
+                            "WIDTH": (self.width, 1),
+                            "HEIGHT": (self.height, 1),
+                            "MINES": (self.mines, 1)
+                        },
+                        is_time_consuming = False,
+                        is_difficult = True,
+                        weight = 2,
+                ),
+                GameObjectiveTemplate(
+                    label = "Beat a WIDTH by HEIGHT board that is MINES mines with the 9, 10, and 11 bosses.",
+                        data = {
+                            "WIDTH": (self.width, 1),
+                            "HEIGHT": (self.height, 1),
+                            "MINES": (self.mines, 1)
+                        },
+                        is_time_consuming = False,
+                        is_difficult = True,
+                        weight = 1,
+                ),
             ])
         if self.include_boss_pursuit and self.include_episode_1:
             game_objective_templates.extend([
@@ -346,7 +510,7 @@ class MinesweeperPlusGame(Game):
                         },
                         is_time_consuming = False,
                         is_difficult = False,
-                        weight = 10,
+                        weight = 6,
                 ),
                 GameObjectiveTemplate(
                     label = "Beat Episode 1 on Boss Pursuit on DIFFICULTY difficulty or higher.",
@@ -355,7 +519,7 @@ class MinesweeperPlusGame(Game):
                         },
                         is_time_consuming = False,
                         is_difficult = True,
-                        weight = 8,
+                        weight = 4,
                 ),
             ])
         if self.include_boss_pursuit and self.include_episode_2:
@@ -366,7 +530,7 @@ class MinesweeperPlusGame(Game):
                         },
                         is_time_consuming = False,
                         is_difficult = False,
-                        weight = 10,
+                        weight = 6,
                 ),
                 GameObjectiveTemplate(
                     label = "Beat Episode 2 on Boss Pursuit on DIFFICULTY difficulty or higher.",
@@ -375,7 +539,27 @@ class MinesweeperPlusGame(Game):
                         },
                         is_time_consuming = False,
                         is_difficult = True,
-                        weight = 8,
+                        weight = 4,
+                ),
+            ])
+        if self.include_boss_pursuit and self.include_episode_3:
+            game_objective_templates.extend([
+                GameObjectiveTemplate(
+                    label = "Beat Episode 3 on Boss Pursuit on any difficulty.",
+                        data = {
+                        },
+                        is_time_consuming = False,
+                        is_difficult = False,
+                        weight = 6,
+                ),
+                GameObjectiveTemplate(
+                    label = "Beat Episode 3 on Boss Pursuit on DIFFICULTY difficulty or higher.",
+                        data = {
+                            "DIFFICULTY": (self.difficulty, 1)
+                        },
+                        is_time_consuming = False,
+                        is_difficult = True,
+                        weight = 4,
                 ),
             ])
         return game_objective_templates
@@ -390,8 +574,14 @@ class MinesweeperPlusGame(Game):
     def include_episode_2(self) -> bool:
         return "Episode 2" in self.modes
     @property
+    def include_episode_3(self) -> bool:
+        return "Episode 3" in self.modes
+    @property
     def include_big_one(self) -> bool:
         return "The Big One" in self.modes
+    @property
+    def include_long_haul(self) -> bool:
+        return "The Long Haul" in self.modes
     @property
     def include_free_play(self) -> bool:
         return "Free Play" in self.modes
@@ -412,6 +602,9 @@ class MinesweeperPlusGame(Game):
     def mines(self) -> List[str]:
         mines: List[str] = ["10%","11%","12%","13%","14%","15%","16%","17%","18%","19%","20%","21%","22%","23%","24%","25%","26%","27%","28%","29%","30%"]
         return mines
+    def level(self) -> List[str]:
+        level: List[str] = [2,3,4,5,6,7,8,9,10,11,12,13,14,15]
+        return level
     @staticmethod
     def episode_1_levels() -> List[str]:
         return [
@@ -439,6 +632,21 @@ class MinesweeperPlusGame(Game):
             "The Deep End (Episode 2 Stage 9)",
             "The Devil's Passage (Episode 2 Stage 10)",
         ]
+    @staticmethod
+    def episode_2_levels() -> List[str]:
+        return [
+            "Bubbly Tub (Episode 3 Stage 1)",
+            "Steamy Jacuzzi (Episode 3 Stage 2)",
+            "Danger Creek (Episode 3 Stage 3)"
+            "Hazard Canal (Episode 3 Stage 4)",
+            "Flooded Fjord (Episode 3 Stage 5)",
+            "Wacky Whirlpool (Episode 3 Stage 6)",
+            "Bomb Bay (Episode 3 Stage 7)",
+            "Ship's Graveyard (Episode 3 Stage 8)",
+            "Delta P (Episode 3 Stage 9)",
+            "Hydraulic Press (Episode 3 Stage 10)",
+            "The Devil's Locker (Episode 3 Stage 11)",
+        ]
 
 
 class MinesweeperPlusSections(OptionSet):
@@ -446,7 +654,9 @@ class MinesweeperPlusSections(OptionSet):
     Defines what sections can generate in keeps.
     Episode 1: Episode 1 levels can appear in a trial.
     Episode 2: Episode 2 levels can appear in a trial.
+    Episode 2: Episode 3 levels can appear in a trial.
     The Big One: Trials on The Big One can appear.
+    The Long Haul: Trials on The Long Haul can appear.
     Free Play: Trials on Free Play can appear.
     Boss Pursuit: Boss Pursuit trials can appear for episodes. This option will not apply if neither episode is enabled.
     """
@@ -454,11 +664,17 @@ class MinesweeperPlusSections(OptionSet):
     valid_keys = [
         "Episode 1",
         "Episode 2",
+        "Episode 3",
         "The Big One",
+        "The Long Haul",
         "Free Play",
         "Boss Pursuit",
     ]
     default = valid_keys
+
+#class MinesweeperPlusSpecialMines(Choice):
+#    """
+#    """
 
 class MinesweeperPlusMaximumDifficulty(Choice):
     """ 
